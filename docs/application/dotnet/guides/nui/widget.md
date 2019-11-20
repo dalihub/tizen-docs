@@ -38,7 +38,9 @@ Each widget application has 1 widget instances.
 
 ## Instance States and Events
 
-// Please insert Picture here
+**Figure: NUI widget flow**
+
+![NUI widget flow](./media/WidgetInstanceFlow.png)
 
 `Widget` class provides interface for creating custom widget.
 
