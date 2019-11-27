@@ -17,12 +17,6 @@ A layout which provides features like wrapping so if items no long fit on an axi
 `FlexLayout` defines four properties that affect the size, orientation, and alignment of child views. These properties are described in more detail in the table below.
 Please see each categories below.
 
-`Justification` applies to the flex Direction axis whilst `Alignment` is the (other) cross axis. Changing the Direction will apply the `Justification` to the new direction.
-
-Natural size of items are used which can be different for each item.
-
-Setting the size of an item has no effect.
-
 | Property               | Type            | Description |
 | -----------------------| --------------- | ------------ |
 | `Direction`            | FlexDirection   | The orientation the flex items are laid out in (Column/Row) |
@@ -30,35 +24,104 @@ Setting the size of an item has no effect.
 | `Alignment`            | AlignmentType     | Alignment of items along the cross axis when free space available |
 | `WrapType`             | FlexWrapType    | Enable wrapping of items |
 
+
+Natural size of items are used which can be different for each item. And setting the size of an item has no effect.
+
+`Justification` applies to the flex Direction axis whilst `Alignment` is the (other) cross axis. Changing the Direction will apply the `Justification` to the new direction.
+
+
 <a name="flexDirection"></a>
 ## FlexDirection
 
 `Direction` property specifies the main axis direction along which flex items are placed.
 
-Column, ColumnReverse, Row, and RowReverse
+![FlexDirection](./media/flex-direction.jpg)
+
+| Property value |  Description |
+|----------------|--------------|
+| `Row`          | Place items horizontally in a row |
+| `RowReverse`   | Place items horizontally in a row, but in reverse order |
+| `Column`       | Place items vertically in a column |
+| `ColumnReverse` | Place items vertically in a column, but in reverse order |
+
+### Usage
+
+```csharp
+View layoutView = new View();
+var flexLayout = new FlexLayout();
+flexLayout.Direction = FlexLayout.FlexDirection.Column;
+layoutView.Layout = flexLayout;
+```
 
 <a name="flexJustification"></a>
 ## FlexJustification
 
 `Justification` property specifies the alignment for flex items, when they do not use all available space on the main axis.
 
-FlexStart, Center, FlexEnd, SpaceBetween, and SpaceAround
+![JustifyContent](./media/justify-content.jpg)
+
+| Property value  |   Description |
+|-----------------|---------------|
+| `FlexStart`     | Position items at the beginning of the container |
+| `FlexEnd`       | Position items at the end of the container |
+| `Center`        | Position items at the center of the container |
+| `SpaceBetween`  |  Position items with equal spacing between them |
+| `SpaceAround`   |  Position items with equal spacing before, between, and after them |
+
+### Usage
+
+```csharp
+View layoutView = new View();
+var flexLayout = new FlexLayout();
+flexLayout.Justification = FlexLayout.FlexJustification.SpaceBetween;
+layoutView.Layout = flexLayout;
+```
+
 
 <a name="alignmentType"></a>
 ## AlignmentType
 
 `Alignment` property specifies the alignment for flex items when they do not use all the available space on the cross axis.
 
-Auto, FlexStart, Center, FlexEnd, and Stretch
+![AlignItems](./media/align-items.jpg)
+
+|  Property value  |   Description  |
+|------------------|----------------|
+|  `Auto`          | Inherits the same alignment from the parent |
+|  `FlexStart`     | Align items to the beginning of the container |
+|  `Center`        | Align items to the center of the container |
+|  `FlexEnd`       | Align items to the end of the container |
+|  `Stretch`       | Stretch items to fit the container |
+
+### Usage
+
+```csharp
+View layoutView = new View();
+var flexLayout = new FlexLayout();
+flexLayout.Alignment = FlexLayout.AlignmentType.Center;
+layoutView.Layout = flexLayout;
+```
 
 <a name="flexWrapType"></a>
 ## FlexWrapType
 
 `WrapType` property specifies whether the flex items must wrap if there is not enough room for them on 1 flex line.
 
-NoWrap, and Wrap
+![FlexWrap](./media/flex-wrap.jpg)
 
-// https://developer.tizen.org/development/guides/.net-application/natural-user-interface/ui-components/flexcontainer  <- Refer to this page, especially images
+| Property value |  Description  |
+|----------------|---------------|
+|  `NoWrap`      | Reduce item sizes to fit them in a single line along the main axis |
+|  `Wrap`        | Show items over multiple lines, if needed |
+
+### Usage
+
+```csharp
+View layoutView = new View();
+var flexLayout = new FlexLayout();
+flexLayout.WrapType = FlexLayout.FlexWrapType.NoWrap;
+layoutView.Layout = flexLayout;
+```
 
 
 ## Related information

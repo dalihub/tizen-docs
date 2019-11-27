@@ -19,14 +19,15 @@ The number of **columns** can be specified and the rows will automatically incre
 <a name="column"></a>
 ## Column
 
-~~~{.cs}
+
+![Column](./media/columnLayout.png)
+
+```csharp
 View layoutView = new View();
 var gridLayout = new GridLayout();
 gridLayout.Columns = 2;
 layoutView.Layout = gridLayout;
-~~~
-
-![Column](./media/columnLayout.png)
+```
 
 
 ## Related information

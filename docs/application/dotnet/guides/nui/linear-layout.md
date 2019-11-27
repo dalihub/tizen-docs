@@ -34,12 +34,12 @@ A `LinearOrientation` indicates the direction of children layouts : horizontal o
 | -----------------------| --------------- |
 | ![Horizontal](./media/horizontalLayout.png) | ![Vertical](./media/verticalLayout.png)  |
 
-~~~{.cs}
+```csharp
 View layoutView = new View();
 var linearLayout = new LinearLayout();
 linearLayout.LinearOrientation = LinearLayout.Orientation.Horizontal;
 layoutView.Layout = layout;
-~~~
+```
 
 
 <a name="alignment"></a>
@@ -59,14 +59,15 @@ You can choose from the below alignment options.
 | CenterVertical | At the vertical center of the container (Horizontal will be set to start) |
 | Center    | At both the vertical and horizontal center of the container |
 
-~~~{.cs}
+![Alignment](./media/linearAlignment.png)
+
+```csharp
 View layoutView = new View();
 var linearLayout = new LinearLayout();
 linearLayout.LinearAlignment = LinearLayout.Alignment.Center;
 layoutView.Layout = layout;
-~~~
+```
 
-![Alignment](./media/linearAlignment.png)
 
 
 <a name="cellpadding"></a>
@@ -74,14 +75,14 @@ layoutView.Layout = layout;
 
 A `CellPadding` is to set the padding between cells in the layout.
 
-~~~{.cs}
+![CellPadding](./media/cellPadding.png)
+
+```csharp
 View layoutView = new View();
 var linearLayout = new LinearLayout();
 linearLayout.CellPadding = new Size2D(10, 20);
 layoutView.Layout = layout;
-~~~
-
-![CellPadding](./media/cellPadding.png)
+```
 
 
 <a name="weight"></a>
@@ -91,7 +92,10 @@ A `Weight` is used to share available space in a layout with siblings.
 
 Depending on each weight, children take up their Parent view's space. So, child views can set a `Weight` as float type. Default weight value is zero.
 
-~~~{.cs}
+
+![Weight](./media/weight.png)
+
+```csharp
 View layoutView = new View();
 var linearLayout = new LinearLayout();
 layoutView.Layout = layout;
@@ -104,9 +108,8 @@ imageView2.Weight = 0.25f;
 
 view.Add(imageView1);
 view.Add(imageView2);
-~~~
+```
 
-![Weight](./media/weight.png)
 
 ## Related information
 
