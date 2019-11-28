@@ -33,7 +33,7 @@ The `NUIWidgetApplication` class provides the `NUIWidgetApplication( System.Type
 
 The widget applications can make diverse class instances whenever widget viewer applications, such as the home screen and the lock screen, request for a widget instance.
 
-Each widget application has 1 widget instances.
+Each widget application has one widget instance.
        
 
 ## Instance States and Events
@@ -77,7 +77,7 @@ The steps to create a NUI widget application:
 
    The `NUIWidgetApplication` class provides constructors, which allows a widget application to have widget class:
 
-   ```
+   ```csharp
     static void Main(string[] args)
     {
         var app = new Program(typeof(MyWidget));
@@ -87,7 +87,7 @@ The steps to create a NUI widget application:
 
 3. Define your widget class, which is inherited from the [Widget](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Widget.html)
 
-   ```
+   ```csharp
    class MyWidget : Tizen.NUI.Widget
    ```
 
@@ -98,7 +98,7 @@ The steps to create a NUI widget application:
      Initialize resources for this widget instance and draw the UI. If bundle content is not NULL, restore the previous status.
 
    
-    ```
+    ```csharp
     class MyWidget : Tizen.NUI.Widget
     {
       protected override void OnCreate(string contentInfo, Window window)
@@ -112,7 +112,7 @@ The steps to create a NUI widget application:
 
   - The `OnTerminate()` callback is triggered when the widget instance is terminated.
 
-      ```
+      ```csharp
       protected override void OnTerminate(string contentInfo, TerminationType type)
       ```
 
@@ -120,7 +120,7 @@ The steps to create a NUI widget application:
 
 
       Take the necessary actions when the widget instance becomes invisible. The framework can destroy a paused widget instance.
-      ```
+      ```csharp
       protected override void OnPause()
       ```
 
@@ -128,21 +128,21 @@ The steps to create a NUI widget application:
 
       Take the necessary actions when the widget instance becomes visible.
 
-      ```
+      ```csharp
       protected override void OnResume()
       ```
 
   - The `OnResize()` callback is triggered when the widget instance is resized.
 
       Take the necessary actions to accommodate the new size.
-      ```
+      ```csharp
       protected override void OnResize(Window window)
       ```
 
   - The `OnUpdate()` callback is triggered when a widget update event is received. 
 
       Take the necessary actions for the widget update. If the isForce parameter is true, the widget can be updated even in the pause state.
-      ```
+      ```csharp
       protected override void OnUpdate(string contentInfo, int force)
       ```
 
@@ -150,7 +150,7 @@ The steps to create a NUI widget application:
 
       The widget UI is drawn in the `OnCreate()` callback of your widget class:
 
-      ```
+      ```csharp
       protected override void OnCreate(string contentInfo, Window window)
       {
           View rootView = new View();
