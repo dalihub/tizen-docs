@@ -1,12 +1,12 @@
 # Text
 
-There are three NUI controls for displaying text on the screen.
+There are three NUI components for displaying text on the screen.
 
-- The [TextLabel](#textLabel) is a NUI control that displays a short text string
+- The [TextLabel](#textLabel) is a NUI components that displays a short text string
 
-- The [TextField](#textField) is a NUI control that allows single line editable text field.
+- The [TextField](#textField) is a NUI components that allows single line text editing.
 
-- The [TextEditor](#textEditor) is a NUI control that allows multi line text editing. It is similar to the TextField control.
+- The [TextEditor](#textEditor) is a NUI components that allows multi line text editing. It is similar to the TextField components.
 
 <a name="textLabel"></a>
 # TextLabel
@@ -37,7 +37,7 @@ To create a text label:
     label.Text = "Hello World";
     ```
 
-    > **Note**  
+    > **Note**
     > To display properly, the `Text` property must be a UTF-8 string. Any `CR+LF` new line characters are replaced by `LF`.
 
 2.  Define the label position on-screen with the `ParentOrigin` property of the `Tizen.NUI.BaseComponents.TextLabel` class:
@@ -53,7 +53,7 @@ To create a text label:
     window.Add(label);
     ```
 
-    > **Note**  
+    > **Note**
     > A text label control can only be added to a window, or to a view that is on a window.
 
 <a name="font"></a>
@@ -314,7 +314,7 @@ TextLabel label = new TextLabel("Hello World");
 label.EnableMarkup = true;
 ```
 
-> **Note**  
+> **Note**
 > The markup processor does not check for markup validity, and styles are rendered in a priority order. Incorrect or incompatible elements can cause the text to be badly rendered.
 
 The following markup elements are currently supported:
@@ -412,7 +412,7 @@ std::string fieldTextString = fieldText.Get< std::string >();
 
 The `TextField` class displays a single line of text, which scrolls for either of the following:
 
--  If there is not enough space for the text displayed. 
+-  If there is not enough space for the text displayed.
 
 -  If there is enough space, the text is aligned horizontally to the beginning, end, or center of the available area.
 
