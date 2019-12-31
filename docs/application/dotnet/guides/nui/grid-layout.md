@@ -19,8 +19,13 @@ The number of **columns** can be specified and the rows will automatically incre
 <a name="column"></a>
 ## Column
 
-
-![Column](./media/columnLayout.png)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/columnLayout.png">
+</td>
+</tr>
+</table>
 
 ```csharp
 View layoutView = new View();

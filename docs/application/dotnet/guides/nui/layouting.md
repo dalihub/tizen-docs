@@ -13,7 +13,7 @@ This tutorial describes the NUI Layouting framework, covering the following subj
 <a name="overview"></a>
 ## Layouting Overview
 
-The Layouting framework enables [View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) to be automatically positioned within a parent View that has been assigned a Layout.
+The Layouting framework enables [View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) to be automatically positioned within a parent View that has been assigned a Layout.
 
 The framework offers a common method to layout **Views** with just minimal setup in the application.
 
@@ -21,8 +21,13 @@ Especially, NUI Layouting provides advanced layouting capabilities in a reusable
 
 Layouts are instances of specific Layouts. For example, the first screenshot below shows LinearLayout with Horizontal Layout and Vertical Layout.
 
-![LinearLayout](./media/NUILayoutImage.png)
-
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/NUILayoutImage.png">
+</td>
+</tr>
+</table>
 
 NUI supports default layouts, such as [Linear Layout](./linear-layout.md) and [Grid Layout](./grid-layout.md).
 The default layouts can be assigned to a View, and then children added to this View will be positioned and sized according to that layout in conjunction with specification and properties set on the layout and Views.
@@ -46,7 +51,6 @@ Below code snippet creates a View, creates a LinearLayout and then sets the layo
 
 ```csharp
 View parentView = new View();
-parentView.Name = "LinearExample";
 
 var layout = new LinearLayout();
 layout.LinearOrientation = LinearLayout.Orientation.Horizontal;
@@ -62,7 +66,6 @@ A default Layout will be assigned if a layout is moved from one View to another.
 
 ```csharp
 View parentView = new View();
-parentView.Name = "LinearExample";
 
 var layoutLinear = new LinearLayout();
 layout.LinearOrientation = LinearLayout.Orientation.Horizontal;
@@ -87,39 +90,31 @@ There are 2 size specifications available for Views : Setting **explicit value**
 
 Size specifications are ways to specify the preferred size of Views within the layouting framework. Height and Width are individual, so each can be set with a different specification.
 
-1. An **explicit value** can be provided, either using the existing Size API or setting a pixel value to the specification. User can specify the width and height with the exact measurement.
+1. An **explicit value** can be provided, either using the existing [Size](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Size.html) API or setting a pixel value to the specification. User can specify the width and height with the exact measurement.
 
-- Using [Size](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Size.html) API
+- Using [Specification](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_HeightSpecification) API
 
-![Sizing90](./media/size_90x90.png)
-```csharp
-View child1 = new View();
-child1.Size  = new Size(90, 90);
+  <table style="width:100%">
+  <tr>
+  <td style="width:100%" align="center">
+  <img src="./media/size_120x120.png">
+  </td>
+  </tr>
+  </table>
 
-View child2 = new View();
-child2.Size  = new Size(90, 90);
+  ```csharp
+  View child1 = new View();
+  child1.WidthSpecification = 90;
+  child1.HeightSpecification = 90;
 
-View child3 = new View();
-child3.Size  = new Size(90, 90);
-```
+  View child2 = new View();
+  child2.WidthSpecification = 120;
+  child2.HeightSpecification = 120;
 
-
-- Using [Specification]() API
-
-![Sizing120](./media/size_120x120.png)
-```csharp
-View child1 = new View();
-child1.WidthSpecification = 90;
-child1.HeightSpecification = 90;
-
-View child2 = new View();
-child2.WidthSpecification = 120;
-child2.HeightSpecification = 120;
-
-View child3 = new View();
-child3.WidthSpecification = 90;
-child3.HeightSpecification = 90;
-```
+  View child3 = new View();
+  child3.WidthSpecification = 90;
+  child3.HeightSpecification = 90;
+  ```
 
 
 2. **Layout Parameters** can set the width or height with the relative value of its children or its parent.
@@ -128,77 +123,97 @@ child3.HeightSpecification = 90;
 
   : Setting a `View`'s height or width specification to `WrapContent` will cause the View to grow or shrink to wrap around the size of its children.
 
-![WrapContent](./media/wrapContent.png)
+  ![WrapContent](./media/wrapContent.png)
 
-```csharp
-View childView = new View();
-childView.WidthSpecification = LayoutParamPolicies.WrapContent;
-childView.HeightSpecification = LayoutParamPolicies.WrapContent;
-```
+  ```csharp
+  View childView = new View();
+  childView.WidthSpecification = LayoutParamPolicies.WrapContent;
+  childView.HeightSpecification = LayoutParamPolicies.WrapContent;
+  ```
 
 - [LayoutParamPolicies.MatchParent]
 
    : Setting a `View`'s height or width specification to `MatchParent` will cause the View to fill the size of its parent.
 
-
-![MatchParent](./media/matchParent.png)
-```csharp
-View childView = new View();
-childView.WidthSpecification = LayoutParamPolicies.MatchParent;
-childView.HeightSpecification = LayoutParamPolicies.MatchParent;
-```
+  ![MatchParent](./media/matchParent.png)
+  ```csharp
+  View childView = new View();
+  childView.WidthSpecification = LayoutParamPolicies.MatchParent;
+  childView.HeightSpecification = LayoutParamPolicies.MatchParent;
+  ```
 
 <a name="paddingAndMargins"></a>
 ### Padding and Margin
 
-![PaddingMargin](./media/paddingMargin.png)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/paddingMargin.png">
+</td>
+</tr>
+</table>
 
 `Padding` and `Margin` provide additional control within a layout to achieve a desired look.
 
-Both padding and margin are 4 values represented by the [Extents](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Extents.html) class : start, top, end, bottom.
+Both padding and margin are 4 values represented by the [Extents](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Extents.html) class : start, top, end, bottom.
+
+#### Padding
 
 `Padding` is the internal space between the boundary of the View and its content. A View with a layout will have child Views as content whilst a leaf View (for example, `ImageView`) would have an ImageVisual as its content.
 
 `Padding` can be provided to a Layout View to give an offset to its children.
 
-![Padding](./media/layoutPadding.png)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/layoutPadding.png">
+</td>
+</tr>
+</table>
 
 ```csharp
-View layoutView = new View();
+View container = new View();
 var layout = new LinearLayout();
-layoutView.Layout = layout;
+container.Layout = layout;
 
-layoutView.Padding = new Extents(10,0,10,0);
+container.Padding = new Extents(10, 10, 10, 10);
 
 View childView = new View();
 childView.WidthSpecification = LayoutParamPolicies.MatchParent;
 childView.HeightSpecification = LayoutParamPolicies.MatchParent;
 
-layoutView.Add(childView);
+container.Add(childView);
 ```
 
+#### Margin
 
 `Margin` is the external space around a View. Providing a child View with a margin will offset the positioning of just that child. Whilst setting the padding on the parent View will offset all the children.
 
-![Margin](./media/layoutMargin.png)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/layoutMargin.png">
+</td>
+</tr>
+</table>
 
 ```csharp
-View layoutView = new View();
+View container = new View();
 var layout = new LinearLayout();
-layoutView.Layout = layout;
+container.Layout = layout;
 
 View childView = new View();
 childView.WidthSpecification = LayoutParamPolicies.WrapContent;
 childView.HeightSpecification = LayoutParamPolicies.WrapContent;
-childView.Margin = new Extents(0,0,10,10);
+childView.Margin = new Extents(10, 10, 10, 10);
 
 View childView2 = new View();
 childView2.WidthSpecification = LayoutParamPolicies.WrapContent;
 childView2.HeightSpecification = LayoutParamPolicies.WrapContent;
-childView2.Margin = new Extents(0,0,10,10);
+childView2.Margin = new Extents(10, 10, 10, 10);
 
-layoutView.Add(childView);
-layoutView.Add(childView2);
+container.Add(childView);
+container.Add(childView2);
 
 ```
 
@@ -218,8 +233,11 @@ If specifying an explicit size and setting the minimum or maximum, it ensures th
 View childView = new View();
 childView.WidthSpecification = LayoutParamPolicies.WrapContent;
 childView.HeightSpecification = LayoutParamPolicies.WrapContent;
-childView.MinimumSize = new Size2D(200,200);
-childView.MaximumSize = new Size2D(400,400);
+
+childView.MinimumSize.width = 200;
+childView.MinimumSize.height = 200;
+childView.MaximumSize.width = 400;
+childView.MaximumSize.height = 400;
 ```
 
 
@@ -230,10 +248,42 @@ Below are the available Layouts that have been implemented and ready to be assig
 
 Each Layout has its own unique properties, such as `AlignmentType` in `LinearLayout`.
 
-| [LinearLayout](./linear-layout.md) | [GridLayout](./grid-layout.md) | [FlexLayout](./flex-layout.md) |
-| -----------------------| --------------- | ------------ |
-| ![LinearLayout](./media/linear-Layout.png) | ![GridLayout](./media/grid-Layout.png)  | ![FlexLayout](./media/flex-Layout.png) |
-| A linear box layout, automatically handling children laid out vertically or horizontally. | A grid box for the two-dimensional layout. | A flexible box layout, providing a more efficient way to lay out, align and distribute space among items in the container, even when their size is unknown or dynamic. |
+<table style="width:100%">
+<tr>
+<td style="width:33%" align="center">
+<a href="./linear-layout.md">Linear Layout</a>
+</td>
+<td style="width:33%" align="center">
+<a href="./grid-layout.md">Grid Layout</a>
+</td>
+<td style="width:33%" align="center">
+<a href="./flex-layout.md">Flex Layout</a>
+</td>
+</tr>
+<tr>
+<tr>
+<td style="width:33%" align="center">
+<img src="./media/linear-Layout.png" width="100%">
+</td>
+<td style="width:33%" align="center">
+<img src="./media/grid-Layout.png" width="100%">
+</td>
+<td style="width:33%" align="center">
+<img src="./media/flex-Layout.png" width="100%">
+</td>
+</tr>
+<tr>
+<td style="width:33%" align="center">
+A linear box layout, automatically handling children laid out vertically or horizontally.
+</td>
+<td style="width:33%" align="center">
+A grid box for the two-dimensional layout.
+</td>
+<td style="width:33%" align="center">
+A flexible box layout, providing a more efficient way to lay out, align and distribute space among items in the container, even when their size is unknown or dynamic.
+</td>
+</tr>
+</table>
 
 
 ## Related information

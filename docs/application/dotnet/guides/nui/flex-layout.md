@@ -35,7 +35,13 @@ Natural size of items are used which can be different for each item. And setting
 
 `Direction` property specifies the main axis direction along which flex items are placed.
 
-![FlexDirection](./media/flex-direction.jpg)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/flexDirection.png">
+</td>
+</tr>
+</table>
 
 | Property value |  Description |
 |----------------|--------------|
@@ -58,7 +64,13 @@ layoutView.Layout = flexLayout;
 
 `Justification` property specifies the alignment for flex items, when they do not use all available space on the main axis.
 
-![JustifyContent](./media/justify-content.jpg)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/justifyContent.png">
+</td>
+</tr>
+</table>
 
 | Property value  |   Description |
 |-----------------|---------------|
@@ -83,7 +95,13 @@ layoutView.Layout = flexLayout;
 
 `Alignment` property specifies the alignment for flex items when they do not use all the available space on the cross axis.
 
-![AlignItems](./media/align-items.jpg)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/alignItems.png">
+</td>
+</tr>
+</table>
 
 |  Property value  |   Description  |
 |------------------|----------------|
@@ -107,7 +125,14 @@ layoutView.Layout = flexLayout;
 
 `WrapType` property specifies whether the flex items must wrap if there is not enough room for them on 1 flex line.
 
-![FlexWrap](./media/flex-wrap.jpg)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/flexWrap.png">
+</td>
+</tr>
+</table>
+
 
 | Property value |  Description  |
 |----------------|---------------|

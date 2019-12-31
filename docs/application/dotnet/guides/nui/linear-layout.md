@@ -10,7 +10,13 @@
 <a name="overview"></a>
 ## Overview
 
-![overview](./media/linearTotal.png)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/linearTotal.png">
+</td>
+</tr>
+</table>
 
 `LinearLayout` is a linear box layout, automatically handling children laid out vertically or horizontally. You can set the layout direction vertically or horizontally by using `LinearOrientation` property.
 
@@ -59,7 +65,13 @@ You can choose from the below alignment options.
 | CenterVertical | At the vertical center of the container (Horizontal will be set to start) |
 | Center    | At both the vertical and horizontal center of the container |
 
-![Alignment](./media/linearAlignment.png)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/linearAlignment.png">
+</td>
+</tr>
+</table>
 
 ```csharp
 View layoutView = new View();
@@ -75,7 +87,14 @@ layoutView.Layout = layout;
 
 A `CellPadding` is to set the padding between cells in the layout.
 
-![CellPadding](./media/cellPadding.png)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/cellPadding.png">
+</td>
+</tr>
+</table>
+
 
 ```csharp
 View layoutView = new View();
@@ -84,7 +103,6 @@ linearLayout.CellPadding = new Size2D(10, 20);
 layoutView.Layout = layout;
 ```
 
-
 <a name="weight"></a>
 ## Weight
 
@@ -92,8 +110,13 @@ A `Weight` is used to share available space in a layout with siblings.
 
 Depending on each weight, children take up their Parent view's space. So, child views can set a `Weight` as float type. Default weight value is zero.
 
-
-![Weight](./media/weight.png)
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/weight.png">
+</td>
+</tr>
+</table>
 
 ```csharp
 View layoutView = new View();
