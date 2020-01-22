@@ -2,16 +2,16 @@
 
 There are three NUI components for displaying text on the screen.
 
-- The [TextLabel](#textLabel) is a NUI components that displays a short text string
+- The [TextLabel](#textLabel) is a NUI component that displays a short text string
 
-- The [TextField](#textField) is a NUI components that allows single line text editing.
+- The [TextField](#textField) is a NUI component that allows single line text editing.
 
-- The [TextEditor](#textEditor) is a NUI components that allows multi line text editing. It is similar to the TextField components.
+- The [TextEditor](#textEditor) is a NUI component that allows multi line text editing. It is similar to the TextField component.
 
 <a name="textLabel"></a>
 # TextLabel
 
-A text label is a NUI control that displays a short text string. It is implemented through the `Tizen.NUI.BaseComponents.TextLabel` class.
+A text label is a NUI component that displays a short text string. It is implemented through the `Tizen.NUI.BaseComponents.TextLabel` class.
 
 Text labels are lightweight, non-editable, and do not respond to user input. They can support multiple languages and scripts, including right-to-left scripts, such as Arabic. For an example of displaying text using a text label, see [NUI Hello World Tutorial](hello-world.md).
 
@@ -427,7 +427,7 @@ field.HorizontalAlignment = HorizontalAlignment.Begin;
 ## TextField Properties
 ### Using Decorations
 
-For text decorations, the following `TextField` class properties are available. All properties are writable and none are animatable:
+For text decorations, the following [Tizen.NUI.BaseComponents.TextField](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextField.html) class properties are available. All properties are writable and none are animatable:
 
 **Table: TextField properties**
 
@@ -539,7 +539,7 @@ window.Add(editor);
 
 You can modify the `TextEditor` appearance and behavior through its properties.
 
-The following table lists the available `TextEditor` properties.
+The following table lists the available [Tizen.NUI.BaseComponents.TextEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextEditor.html) properties.
 
 **Table: TextEditor properties**
 
